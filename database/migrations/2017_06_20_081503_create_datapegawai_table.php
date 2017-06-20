@@ -33,6 +33,6 @@ class CreateDatapegawaiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('datapegawai');
+        Schema::dropIfExists('datapegawai');
     }
 }

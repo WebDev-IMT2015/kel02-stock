@@ -13,7 +13,7 @@ class CreateDatabarangTable extends Migration
      */
     public function up()
     {
-        Schema::table('databarang', function (Blueprint $table) {
+        Schema::create('databarang', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
             $table->string('deskripsi');
@@ -32,6 +32,6 @@ class CreateDatabarangTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('databarang');
+        Schema::dropIfExists('databarang');
     }
 }
