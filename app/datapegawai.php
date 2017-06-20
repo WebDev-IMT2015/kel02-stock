@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class datapegawai extends Model
 {
-    protected $table = 'datapegawais';
+    protected $table = 'datapegawai';
 }

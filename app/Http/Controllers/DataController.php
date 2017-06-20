@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\daftarbarangs;
+use App\databarang;
 
 use Illuminate\Support\Facades\Input;
 
@@ -17,13 +17,13 @@ class DataController extends Controller
      */
     public function index()
     {
-        $model = daftarbarangs::all();
+        $model = databarang::all();
         return view('daftarbarang')->withModel($model);
     }
     
     public function indexLaporan()
     {
-        $model = daftarbarangs::all();
+        $model = databarang::all();
         return view('laporan')->withModel($model);
     }
 
@@ -45,7 +45,7 @@ class DataController extends Controller
      */
     public function store(Request $request)
     {
-        $barang = new daftarbarangs;
+        $barang = new databarang;
         $barang->nama = Input::get('name');
         $barang->deskripsi = Input::get('deskripsi');
         $barang->harga = Input::get('harga');
@@ -75,9 +75,9 @@ class DataController extends Controller
      */
     public function editbr($id)
     {
-        $model = daftarbarangs::all();
+        $model = databarang::all();
         
-        $post = daftarbarangs::find($id);
+        $post = databarang::find($id);
         
         
         return view('editbarang')->with('postdata', $post);
@@ -92,7 +92,7 @@ class DataController extends Controller
      */
     public function updatebr(Request $request)
     {
-        $barang = daftarbarangs::find($request->id);
+        $barang = databarang::find($request->id);
         
         $barang->nama = Input::get('name');
         $barang->deskripsi = Input::get('deskripsi');
@@ -100,7 +100,7 @@ class DataController extends Controller
         $barang->jumlah = Input::get('jumlah');
         $barang->dari = Input::get('dari');
         
-        $model = daftarbarangs::all();
+        $model = databarang::all();
         
         return view('daftarbarang')->with('model', $model);
     }
@@ -113,7 +113,7 @@ class DataController extends Controller
      */
     public function destroy($id)
     {
-        $post = daftarbarangs::find($id);
+        $post = databarang::find($id);
         
         if($post != null){
             $post->delete();
