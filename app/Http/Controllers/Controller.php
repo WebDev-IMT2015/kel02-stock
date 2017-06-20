@@ -10,16 +10,4 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    
-    function insert(Request $req){
-        $nama = $req->input('name');
-        $harga = $req->input('harga');
-        $jumlah = $req->input('jumlah');
-        
-        $data = array('name'=>$nama,'harga'=>$harga,'jumlah'=>$jumlah);
-        
-        DB::table('barang')->insert($data);
-        
-        echo "Berhasil";
-    }
 }

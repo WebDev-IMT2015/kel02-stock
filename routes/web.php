@@ -34,7 +34,7 @@ Route::get('hapuspegawai', function () {
 });
 
 Route::get('editbarang', function () {
-    return view('editpegawai');
+    return view('editbarang');
 });
 
 Route::get('daftarbarang', 'DataController@index');

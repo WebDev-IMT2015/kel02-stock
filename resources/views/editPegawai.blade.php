@@ -1,59 +1,76 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div class="container">
-            <div class="row">
-                <div class="col-md-20">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><h2>DATA PEGAWAI KE {{ $post->id }}
-                        </h2>
-                        </div>
-
-                        <div class="panel-body">
-                            <form action="{{ route('barang.update', $post->id) }}" method="post"> 
-                <div class ="col-md-15">
-                <label for="id">ID PEGAWAI:</label>
-                    <textarea type="text" class="form-control input-md" id="id" name="id" rows="1" style="resize:none;">{{ $post->nim }}</textarea>
-
-                    <label for="nama">NAMA PEGAWAI:</label>
-                    <textarea type="text" class="form-control input-md" id="nama" name="nama" rows="1">{{ $post->nama }}</textarea>
-
-                    <label for="jurusan">ALAMAT PEGAWAI:</label>
-                    <textarea type="text" class="form-control input-md" id="jurusan" name="jurusan" rows="1">{{ $post->jurusan }}</textarea>
-
-                    <label for="angkatan">STATUS PEGAWAI:</label>
-                    <textarea type="text" class="form-control input-md" id="angkatan" name="angkatan" rows="1">{{ $post->angkatan }}</textarea>
-
-                    <label for="password">KONTAK PEGAWAI:</label>
-                    <textarea type="text" class="form-control input-md" id="password" name="password" rows="1">{{ $post->password }}</textarea> 
-                                
-                    <label for="password">   </label>
-                   </div> 
-                   <label for="password">   </label>
-                   </div> 
-
-                    <div class="row">
-                            <div class="col-sm-1">
-                            </div>
-                            <div class="col-sm-4">
-                                <a href="{{  route('mahasiswa.show', $post->id, 'Cancel')  }}" class="btn btn-danger btn-block"> Cancel</a>
-                            </div>
-                        <div class="col-sm-2">
-                            </div>
-                            <div class="col-sm-4">
-                                 <button type="submit" class="btn btn-success btn-block">Save Changes</button>
-                            </div>
-                            <div class="col-sm-1">
-                            </div>
-                    </div>
-
-           <input type="hidden" name="_method" value="PUT">
-           <input type="hidden" name="_token" value="{{ Session::token() }}">  <!-- HARUS PAKE INI SUPAYA GA TOKEN ERROR EXXEPTION-->
-          </form>
-                        </div>
-                    </div>
+  
+   <div class="col-md-8 col-md-offset-2">
+   
+    <form action="storePegawai" method="post">
+        <center><h3>Form Edit Petugas</h3></center>
+        
+          <div class="form-group">
+           {{ csrf_field() }}
+            <label for="name" class="cols-sm-2 control-label">ID Petugas</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Nama" />
                 </div>
+            </div>
+        </div>
+          <div class="form-group">
+           {{ csrf_field() }}
+            <label for="name" class="cols-sm-2 control-label">Nama</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Nama" />
+                </div>
+            </div>
         </div>
 
+        <div class="form-group">
+            <label for="email" class="cols-sm-2 control-label">Email</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="username" class="cols-sm-2 control-label">Password</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="******" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="cols-sm-2 control-label">Jabatan</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="jabatan" id="jabatan" placeholder="Jabatan" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group ">
+            <input type="submit" name="submit"  class="btn btn-primary btn-lg btn-block login-button" value="Simpan Perubahan">
+        </div>
+
+    </form>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+<footer>
+    <center>Kelompok 2 @Webdev 2017</center>
+</footer>
 @endsection
+</div>
