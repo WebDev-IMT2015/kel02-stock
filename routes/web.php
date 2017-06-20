@@ -67,7 +67,7 @@ Route::get('editbr&{id}', 'DataController@editbr');
 
 Route::post('update', 'PetugasController@update');
 
-Route::post('updatebr', 'DataController@updatebr');
+Route::post('updatebr&{{ $postdata }}', 'DataController@updatebr'); 
 
 //Route::get('laporan', 'DataController@index');
 

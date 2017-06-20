@@ -92,7 +92,7 @@ class PetugasController extends Controller
      */
     public function update(Request $request)
     {
-        $pegawai = datapegawai::find($$request->id);
+        $pegawai = datapegawai::find($request->id);
         
         $pegawai->nama = Input::get('name');
         $pegawai->email = Input::get('email');

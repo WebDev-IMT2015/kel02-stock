@@ -4,7 +4,7 @@
   
    <div class="col-md-8 col-md-offset-2">
    
-    <form action="updatebr" method="post">
+    <form action="updatebr&{{ $postdata }}" method="post">
         <center><h3>Form Edit Barang</h3></center>
         <div class="form-group">
            {{ csrf_field() }}
