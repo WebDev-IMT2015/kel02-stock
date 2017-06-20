@@ -3,26 +3,20 @@
 @section('content')
   
    <div class="col-md-8 col-md-offset-2">
-    <form action="store" method="post">
+   
+    <form action="updatebr" method="post">
         <center><h3>Form Edit Barang</h3></center>
         <div class="form-group">
            {{ csrf_field() }}
-            <label for="name" class="cols-sm-2 control-label">ID Barang</label>
-            <div class="cols-sm-10">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="nama" />
-                </div>
-            </div>
+            <label for="name" class="cols-sm-2 control-label" value=""><h3>ID Barang : {{ $postdata->id }}</h3> </label>
         </div>
         
         <div class="form-group">
-           {{ csrf_field() }}
             <label for="name" class="cols-sm-2 control-label">Nama Barang</label>
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="nama" />
+                    <input type="text" class="form-control" name="name" id="name" value="{{ $postdata->nama }}"/>
                 </div>
             </div>
         </div>
@@ -32,7 +26,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="deskripsi" id="deskripsi" placeholder="deskripsi" />
+                    <input type="text" class="form-control" name="deskripsi" id="deskripsi" value="{{ $postdata->deskripsi }}" />
                 </div>
             </div>
         </div>
@@ -42,7 +36,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="harga" id="harga" placeholder="9999999" />
+                    <input type="text" class="form-control" name="harga" id="harga" value="{{ $postdata->harga }}" />
                 </div>
             </div>
         </div>
@@ -52,7 +46,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="jumlah" id="jumlah" placeholder="0" />
+                    <input type="text" class="form-control" name="jumlah" id="jumlah" value="{{ $postdata->jumlah }}" />
                 </div>
             </div>
         </div>
@@ -62,7 +56,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="dari" id="dari" placeholder="Nama Distributor" />
+                    <input type="text" class="form-control" name="dari" id="dari" value="{{ $postdata->dari }}" />
                 </div>
             </div>
         </div>

@@ -61,6 +61,14 @@ Route::delete('hapusbr&{id}', 'DataController@destroy');
 
 Route::get('laporan', 'DataController@indexLaporan');
 
+Route::get('edit&{id}', 'PetugasController@edit');
+
+Route::get('editbr&{id}', 'DataController@editbr');
+
+Route::post('update', 'PetugasController@update');
+
+Route::post('updatebr', 'DataController@updatebr');
+
 //Route::get('laporan', 'DataController@index');
 
 //Route::resource('petugas', 'PetugasController');

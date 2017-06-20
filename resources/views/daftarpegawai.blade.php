@@ -24,7 +24,7 @@
                                     <td>{{ $petugas->email }}</td>
                                     <td>{{ $petugas->jabatan }}</td>
                                     <td>
-                                        <form action="editpegawai" method="get"><input type="submit" value="Edit" class="btn btn-warning"></form>
+                                        <form action="edit&<?php echo $petugas->id ?>" method="get"><input type="submit" value="Edit" class="btn btn-warning"></form>
                                         <form action="hapus&<?php echo $petugas->id ?>" method="post"><input type="submit" value="Delete" class="btn btn-danger">
                                         <input type="hidden" name="_token" value="{{ Session::token() }}">
                                         {{ method_field('DELETE') }}

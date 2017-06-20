@@ -28,7 +28,7 @@
                                     <td>{{ $barang->jumlah }}</td>
                                     <td>{{ $barang->dari }}</td>
                                     <td>
-                                        <form action="editbarang" method="get"><input type="submit" value="Edit" class="btn btn-warning"></form>
+                                        <form action="editbr&<?php echo $barang->id ?>" method="get"><input type="submit" value="Edit" class="btn btn-warning"></form>
                                         <form action="hapusbr&<?php echo $barang->id ?>" method="post"><input type="submit" value="Delete" class="btn btn-danger">
                                         <input type="hidden" name="_token" value="{{ Session::token() }}">
                                         {{ method_field('DELETE') }}

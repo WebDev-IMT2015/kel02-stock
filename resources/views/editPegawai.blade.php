@@ -4,26 +4,19 @@
   
    <div class="col-md-8 col-md-offset-2">
    
-    <form action="storePegawai" method="post">
+    <form action="update" method="post">
         <center><h3>Form Edit Petugas</h3></center>
         
           <div class="form-group">
            {{ csrf_field() }}
-            <label for="name" class="cols-sm-2 control-label">ID Petugas</label>
-            <div class="cols-sm-10">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Nama" />
-                </div>
-            </div>
+            <label for="name" class="cols-sm-2 control-label"><h3>ID Petugas : {{ $postdata->id }}</h3></label>
         </div>
           <div class="form-group">
-           {{ csrf_field() }}
             <label for="name" class="cols-sm-2 control-label">Nama</label>
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Nama" />
+                    <input type="text" class="form-control" name="name" id="name" value="{{ $postdata->nama }}" />
                 </div>
             </div>
         </div>
@@ -33,7 +26,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" />
+                    <input type="email" class="form-control" name="email" id="email" value="{{ $postdata->email }}" />
                 </div>
             </div>
         </div>
@@ -43,7 +36,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="******" />
+                    <input type="password" class="form-control" name="password" id="password" value="{{ $postdata->password }}" />
                 </div>
             </div>
         </div>
@@ -53,7 +46,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="jabatan" id="jabatan" placeholder="Jabatan" />
+                    <input type="text" class="form-control" name="jabatan" id="jabatan" value="{{ $postdata->jabatan }}" />
                 </div>
             </div>
         </div>

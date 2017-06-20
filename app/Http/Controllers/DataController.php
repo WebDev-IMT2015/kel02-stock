@@ -73,9 +73,14 @@ class DataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editbr($id)
     {
-        //
+        $model = daftarbarangs::all();
+        
+        $post = daftarbarangs::find($id);
+        
+        
+        return view('editbarang')->with('postdata', $post);
     }
 
     /**
@@ -85,9 +90,19 @@ class DataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updatebr(Request $request)
     {
-        //
+        $barang = daftarbarangs::find($request->id);
+        
+        $barang->nama = Input::get('name');
+        $barang->deskripsi = Input::get('deskripsi');
+        $barang->harga = Input::get('harga');
+        $barang->jumlah = Input::get('jumlah');
+        $barang->dari = Input::get('dari');
+        
+        $model = daftarbarangs::all();
+        
+        return view('daftarbarang')->with('model', $model);
     }
 
     /**

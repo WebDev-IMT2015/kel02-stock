@@ -74,7 +74,13 @@ class PetugasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = datapegawai::all();
+        
+        $post = datapegawai::find($id);
+        
+        
+        return view('editPegawai')->with('postdata', $post);
+        
     }
 
     /**
@@ -84,9 +90,20 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $pegawai = datapegawai::find($$request->id);
+        
+        $pegawai->nama = Input::get('name');
+        $pegawai->email = Input::get('email');
+        $pegawai->password = Input::get('password');
+        $pegawai->jabatan = Input::get('jabatan');
+        
+        $pegawai->save();
+        
+        $model = datapegawai::all();
+        
+        return view('daftarpegawai')->with('model', $model);
     }
 
     /**
